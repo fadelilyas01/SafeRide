@@ -1,0 +1,9 @@
+
+C:\Projet\SafeRide\backend\src\events.gateway.ts
+  27:5   warning  Promises must be awaited, end with a call to .catch, end with a call to .then with a rejection handler or be explicitly marked as ignored with the `void` operator  @typescript-eslint/no-floating-promises
+  54:5   warning  Promises must be awaited, end with a call to .catch, end with a call to .then with a rejection handler or be explicitly marked as ignored with the `void` operator  @typescript-eslint/no-floating-promises
+  78:16  error    Replace `⏎······.to(`ride_chat_${data.rideId}`)⏎······` with `.to(`ride_chat_${data.rideId}`)`                                                                      prettier/prettier
+
+✖ 3 problems (1 error, 2 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+

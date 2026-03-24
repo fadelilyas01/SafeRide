@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: saferide_db
+    environment:
+      POSTGRES_USER: saferide_user
+      POSTGRES_PASSWORD: saferide_password
+      POSTGRES_DB: saferide_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

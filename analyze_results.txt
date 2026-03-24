@@ -1,0 +1,146 @@
+﻿Analyzing SafeRide...                                           
+
+  error - Undefined class 'UserRole' - lib\data\datasources\auth_remote_data_source.dart:16:14 - undefined_class
+  error - Undefined class 'UserRole' - lib\data\datasources\auth_remote_data_source.dart:49:14 - undefined_class
+   info - The imported package 'http' isn't a dependency of the importing package - lib\data\datasources\backend_client.dart:2:8 - depend_on_referenced_packages
+   info - 'PolylineRequest' is deprecated and shouldn't be used. Use RoutesApiRequest instead - lib\data\datasources\navigation_service.dart:12:16 - deprecated_member_use
+warning - The receiver can't be null, so the null-aware operator '?.' is unnecessary - lib\data\datasources\ride_remote_data_source.dart:24:39 - invalid_null_aware_operator
+warning - The receiver can't be null, so the null-aware operator '?.' is unnecessary - lib\data\datasources\ride_remote_data_source.dart:25:39 - invalid_null_aware_operator
+warning - The receiver can't be null, so the null-aware operator '?.' is unnecessary - lib\data\datasources\ride_remote_data_source.dart:27:49 - invalid_null_aware_operator
+warning - The receiver can't be null, so the null-aware operator '?.' is unnecessary - lib\data\datasources\ride_remote_data_source.dart:28:49 - invalid_null_aware_operator
+   info - The member 'toJson' overrides an inherited member but isn't annotated with '@override' - lib\data\models\user_model.dart:107:24 - annotate_overrides
+  error - The method 'updateEmergencyContacts' isn't defined for the type 'AuthRemoteDataSource' - lib\data\repositories\auth_repository_impl.dart:75:30 - undefined_method
+  error - A value of type 'Future<List<RideModel>>' can't be returned from the method 'getPassengerRides' because it has a return type of 'Stream<List<RideEntity>>' - lib\data\repositories\ride_repository_impl.dart:75:69 - return_of_invalid_type
+  error - A value of type 'Future<List<RideModel>>' can't be returned from the method 'getDriverRides' because it has a return type of 'Stream<List<RideEntity>>' - lib\data\repositories\ride_repository_impl.dart:78:63 - return_of_invalid_type
+  error - A value of type 'Future<List<RideModel>>' can't be returned from the method 'getAvailableRides' because it has a return type of 'Stream<List<RideEntity>>' - lib\data\repositories\ride_repository_impl.dart:81:51 - return_of_invalid_type
+  error - The named parameter 'firebaseAuth' isn't defined - lib\injection_container.dart:30:7 - undefined_named_parameter
+  error - The named parameter 'firestore' isn't defined - lib\injection_container.dart:31:7 - undefined_named_parameter
+  error - The named parameter 'firestore' isn't defined - lib\injection_container.dart:40:36 - undefined_named_parameter
+  error - Target of URI doesn't exist: 'package:flutter_gen/gen_l10n/app_localizations.dart' - lib\main.dart:5:8 - uri_does_not_exist
+  error - The values in a const list literal must be constants - lib\main.dart:86:11 - non_constant_list_element
+  error - Undefined name 'AppLocalizations' - lib\main.dart:86:11 - undefined_identifier
+  error - Target of URI doesn't exist: 'package:flutter_gen/gen_l10n/app_localizations.dart' - lib\presentation\screens\active_ride_screen.dart:20:8 - uri_does_not_exist
+   info - 'setMapStyle' is deprecated and shouldn't be used. Use GoogleMap.style instead - lib\presentation\screens\active_ride_screen.dart:158:20 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\active_ride_screen.dart:205:36 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\active_ride_screen.dart:208:41 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\active_ride_screen.dart:237:38 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\presentation\screens\active_ride_screen.dart:252:46 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\active_ride_screen.dart:286:67 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\active_ride_screen.dart:295:42 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\presentation\screens\active_ride_screen.dart:312:40 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\presentation\screens\active_ride_screen.dart:344:44 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\active_ride_screen.dart:357:50 - deprecated_member_use
+  error - The getter 'emerald' isn't defined for the type 'Colors' - lib\presentation\screens\ai_assistant_screen.dart:62:29 - undefined_getter
+  error - Invalid constant value - lib\presentation\screens\ai_assistant_screen.dart:65:58 - invalid_constant
+  error - The getter 'emerald' isn't defined for the type 'Colors' - lib\presentation\screens\ai_assistant_screen.dart:65:65 - undefined_getter
+warning - Unused import: '../../core/theme/app_colors.dart' - lib\presentation\screens\driver_dashboard_screen.dart:4:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\driver_dashboard_screen.dart:49:57 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\driver_dashboard_screen.dart:80:113 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\driver_dashboard_screen.dart:106:128 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\driver_dashboard_screen.dart:140:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\driver_dashboard_screen.dart:151:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\driver_dashboard_screen.dart:185:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\driver_dashboard_screen.dart:203:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\driver_dashboard_screen.dart:218:118 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\presentation\screens\help_support_screen.dart:43:34 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\help_support_screen.dart:43:49 - deprecated_member_use
+  error - The named parameter 'color' isn't defined - lib\presentation\screens\help_support_screen.dart:102:7 - undefined_named_parameter
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\help_support_screen.dart:102:32 - deprecated_member_use
+  error - Target of URI doesn't exist: 'package:flutter_gen/gen_l10n/app_localizations.dart' - lib\presentation\screens\home_screen.dart:5:8 - uri_does_not_exist
+  error - Undefined class 'Completer' - lib\presentation\screens\home_screen.dart:24:9 - undefined_class
+  error - The method 'Completer' isn't defined for the type '_HomeScreenState' - lib\presentation\screens\home_screen.dart:24:57 - undefined_method
+   info - 'setMapStyle' is deprecated and shouldn't be used. Use GoogleMap.style instead - lib\presentation\screens\home_screen.dart:113:28 - deprecated_member_use
+  error - The method 'RouteGlowPainter' isn't defined for the type '_HomeScreenState' - lib\presentation\screens\home_screen.dart:129:32 - undefined_method
+  error - Invalid constant value - lib\presentation\screens\home_screen.dart:189:64 - invalid_constant
+  error - The getter 'emerald' isn't defined for the type 'Colors' - lib\presentation\screens\home_screen.dart:189:71 - undefined_getter
+  error - The name 'AuthState' isn't a type, so it can't be used as a type argument - lib\presentation\screens\home_screen.dart:337:34 - non_type_as_type_argument
+  error - The name 'Authenticated' isn't defined, so it can't be used in an 'is' expression - lib\presentation\screens\home_screen.dart:341:22 - type_test_with_undefined_name
+  error - The property 'user' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\screens\home_screen.dart:342:24 - unchecked_use_of_nullable_value
+  error - The property 'user' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\screens\home_screen.dart:343:25 - unchecked_use_of_nullable_value
+  error - Target of URI doesn't exist: 'package:flutter_gen/gen_l10n/app_localizations.dart' - lib\presentation\screens\profile_screen.dart:10:8 - uri_does_not_exist
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:30:23 - undefined_identifier
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:36:56 - undefined_identifier
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:41:56 - undefined_identifier
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:49:27 - undefined_identifier
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:65:27 - undefined_identifier
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:85:21 - undefined_identifier
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:102:21 - undefined_identifier
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:107:21 - undefined_identifier
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:121:37 - undefined_identifier
+  error - The method 'push' isn't defined for the type 'BuildContext' - lib\presentation\screens\profile_screen.dart:147:30 - undefined_method
+  error - The method 'push' isn't defined for the type 'BuildContext' - lib\presentation\screens\profile_screen.dart:167:34 - undefined_method
+  error - The method 'push' isn't defined for the type 'BuildContext' - lib\presentation\screens\profile_screen.dart:177:34 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\profile_screen.dart:191:47 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\profile_screen.dart:205:83 - deprecated_member_use
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:216:25 - undefined_identifier
+  error - Undefined name 'AppLocalizations' - lib\presentation\screens\profile_screen.dart:217:25 - undefined_identifier
+  error - The getter 'textMain' isn't defined for the type 'AppColors' - lib\presentation\screens\register_screen.dart:31:36 - undefined_getter
+warning - Unused import: '../../core/theme/app_colors.dart' - lib\presentation\screens\ride_planning_screen.dart:5:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:155:102 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:157:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:165:67 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:182:43 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\presentation\screens\ride_planning_screen.dart:182:75 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:182:90 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:190:97 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:191:98 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:199:121 - deprecated_member_use
+   info - 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre - lib\presentation\screens\ride_planning_screen.dart:206:13 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\presentation\screens\ride_planning_screen.dart:222:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:222:75 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\presentation\screens\ride_planning_screen.dart:240:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\ride_planning_screen.dart:240:75 - deprecated_member_use
+   info - The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - lib\presentation\screens\safescore_screen.dart:3:8 - unnecessary_import
+  error - The getter 'emerald' isn't defined for the type 'Colors' - lib\presentation\screens\safescore_screen.dart:81:33 - undefined_getter
+  error - The getter 'emerald' isn't defined for the type 'Colors' - lib\presentation\screens\safescore_screen.dart:102:72 - undefined_getter
+  error - The getter 'emerald' isn't defined for the type 'Colors' - lib\presentation\screens\safescore_screen.dart:165:97 - undefined_getter
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\support_chat_screen.dart:24:38 - deprecated_member_use
+warning - Unused import: '../../core/constants/app_constants.dart' - lib\presentation\screens\transaction_history_screen.dart:5:8 - unused_import
+   info - The imported package 'lucide_icons' isn't a dependency of the importing package - lib\presentation\screens\wallet_screen.dart:3:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:lucide_icons/lucide_icons.dart' - lib\presentation\screens\wallet_screen.dart:3:8 - uri_does_not_exist
+  error - The getter 'primaryIndigo' isn't defined for the type 'AppColors' - lib\presentation\screens\wallet_screen.dart:25:34 - undefined_getter
+  error - Invalid constant value - lib\presentation\screens\wallet_screen.dart:71:30 - invalid_constant
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:71:30 - undefined_identifier
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:73:45 - deprecated_member_use
+  error - Invalid constant value - lib\presentation\screens\wallet_screen.dart:89:30 - invalid_constant
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:89:30 - undefined_identifier
+  error - The getter 'primaryIndigo' isn't defined for the type 'AppColors' - lib\presentation\screens\wallet_screen.dart:91:42 - undefined_getter
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:111:26 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:112:26 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:115:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:118:33 - deprecated_member_use
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:131:15 - undefined_identifier
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:133:35 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:152:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:171:45 - deprecated_member_use
+  error - Invalid constant value - lib\presentation\screens\wallet_screen.dart:174:41 - invalid_constant
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:174:41 - undefined_identifier
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:185:45 - deprecated_member_use
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:207:16 - undefined_identifier
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:208:16 - undefined_identifier
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:209:16 - undefined_identifier
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:210:16 - undefined_identifier
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:221:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:223:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:231:37 - deprecated_member_use
+  error - The getter 'primaryIndigo' isn't defined for the type 'AppColors' - lib\presentation\screens\wallet_screen.dart:257:30 - undefined_getter
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:273:17 - undefined_identifier
+  error - The getter 'primaryIndigo' isn't defined for the type 'AppColors' - lib\presentation\screens\wallet_screen.dart:274:28 - undefined_getter
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:281:17 - undefined_identifier
+  error - The getter 'emerald' isn't defined for the type 'Colors' - lib\presentation\screens\wallet_screen.dart:282:25 - undefined_getter
+  error - Undefined name 'LucideIcons' - lib\presentation\screens\wallet_screen.dart:289:17 - undefined_identifier
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:304:33 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:306:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:313:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\wallet_screen.dart:334:45 - deprecated_member_use
+  error - The getter 'emerald' isn't defined for the type 'Colors' - lib\presentation\screens\wallet_screen.dart:344:54 - undefined_getter
+warning - Unused import: '../../core/theme/app_colors.dart' - lib\presentation\widgets\chat_widget.dart:4:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\widgets\otp_display_widget.dart:35:48 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\presentation\widgets\rating_dialog.dart:65:40 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\widgets\route_glow_painter.dart:27:25 - deprecated_member_use
+  error - The method 'withOpacity' isn't defined for the type 'Paint' - lib\presentation\widgets\route_glow_painter.dart:55:56 - undefined_method
+warning - Unused import: 'dart:convert' - test\data\models\user_model_test.dart:1:8 - unused_import
+warning - Unused import: 'package:saferide/domain/entities/user_entity.dart' - test\data\models\user_model_test.dart:4:8 - unused_import
+   info - Don't invoke 'print' in production code - test\data\repositories\ride_repository_impl_test.dart:5:5 - avoid_print
+warning - Unused import: 'package:equatable/equatable.dart' - test\domain\entities\user_entity_test.dart:2:8 - unused_import
+

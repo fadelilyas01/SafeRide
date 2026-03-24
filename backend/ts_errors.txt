@@ -1,0 +1,7 @@
+src/payments/payments.controller.ts(11,55): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/payments/payments.service.ts(33,10): error TS18047: 'user' is possibly 'null'.
+src/payments/payments.service.ts(35,16): error TS18047: 'user' is possibly 'null'.
+src/payments/payments.service.ts(36,15): error TS18047: 'user' is possibly 'null'.
+src/payments/payments.service.ts(51,7): error TS2322: Type 'string | null' is not assignable to type 'string | undefined'.
+  Type 'null' is not assignable to type 'string | undefined'.
+src/payments/payments.service.ts(51,17): error TS18047: 'user' is possibly 'null'.

@@ -1,0 +1,19 @@
+Analyzing SafeRide...                                           
+
+   info - 'PolylineRequest' is deprecated and shouldn't be used. Use RoutesApiRequest instead - lib\data\datasources\navigation_service.dart:12:16 - deprecated_member_use
+warning - The value of the local variable 'event' isn't used - lib\data\datasources\ride_remote_data_source.dart:77:22 - unused_local_variable
+   info - The prefix 'IO' isn't a lower_case_with_underscores identifier - lib\data\datasources\socket_client.dart:2:60 - library_prefixes
+   info - Don't invoke 'print' in production code - lib\data\datasources\socket_client.dart:28:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\datasources\socket_client.dart:35:32 - avoid_print
+   info - The imported package 'shared_preferences' isn't a dependency of the importing package - lib\data\datasources\stripe_service.dart:7:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:shared_preferences/shared_preferences.dart' - lib\data\datasources\stripe_service.dart:7:8 - uri_does_not_exist
+  error - Undefined name 'SharedPreferences' - lib\data\datasources\stripe_service.dart:13:27 - undefined_identifier
+  error - The getter 'tokenKey' isn't defined for the type 'AppConstants' - lib\data\datasources\stripe_service.dart:14:50 - undefined_getter
+  error - The getter 'apiBaseUrl' isn't defined for the type 'AppConstants' - lib\data\datasources\stripe_service.dart:18:45 - undefined_getter
+  error - Undefined name 'ThemeMode' - lib\data\datasources\stripe_service.dart:49:18 - undefined_identifier
+  error - Invalid constant value - lib\data\datasources\stripe_service.dart:52:24 - invalid_constant
+  error - The method 'Color' isn't defined for the type 'StripeService' - lib\data\datasources\stripe_service.dart:52:24 - undefined_method
+  error - Undefined name 'SharedPreferences' - lib\data\datasources\stripe_service.dart:80:27 - undefined_identifier
+  error - The getter 'tokenKey' isn't defined for the type 'AppConstants' - lib\data\datasources\stripe_service.dart:81:50 - undefined_getter
+  error - The getter 'apiBaseUrl' isn't defined for the type 'AppConstants' - lib\data\datasources\stripe_service.dart:85:45 - undefined_getter
+
