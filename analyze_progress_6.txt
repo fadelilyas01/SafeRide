@@ -1,4 +1,0 @@
-Analyzing SafeRide...                                           
-
-   info - 'PolylineRequest' is deprecated and shouldn't be used. Use RoutesApiRequest instead - lib\data\datasources\navigation_service.dart:12:16 - deprecated_member_use
-

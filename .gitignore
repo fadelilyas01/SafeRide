@@ -46,8 +46,12 @@ app.*.map.json
 
 # API Keys / Secrets
 ios/Flutter/Secrets.xcconfig
+android/local.properties
+.env
+.env.*
 
-# Backend secrets & build artifacts
+# Backend / Admin secrets
+admin_web/.env.local
 backend/.env
 backend/dist/
 backend/node_modules/

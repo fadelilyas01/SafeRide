@@ -1,73 +1,80 @@
-# SafeRide
+# 🛡️ SafeRide Canada
 
-SafeRide is a complete, full-stack urban mobility platform. It includes a mobile application for drivers and passengers, an administrative web dashboard, and a real-time Node.js backend. The project focuses on security, live tracking, and seamless communication.
+**SafeRide** est une plateforme de mobilité urbaine full-stack ultra-sécurisée, conçue pour le marché canadien. Elle intègre une application mobile hybride (Passager/Chauffeur), un tableau de bord administratif temps réel et une infrastructure backend robuste basée sur Supabase.
 
-## Project Structure
+---
 
-The repository is divided into three main components:
+## 🏗️ Architecture du Projet
 
-1. **`lib/` & `android/` & `ios/` (Mobile Application)**
-   - Built with **Flutter**.
-   - Handles real-time Google Maps integration, route estimation, and push notifications (Firebase).
-   - Manages state using the BLoC pattern.
-   - Includes secure Stripe integration for payment processing.
+L'écosystème SafeRide est divisé en deux composants principaux pilotés par un backend unifié :
 
-2. **`backend/` (Server)**
-   - Built with **NestJS**.
-   - Database managed by **Prisma** (configured for SQLite in development, easily switchable to PostgreSQL).
-   - Secure authentication using JWT and Bcrypt connection.
-   - Real-time features (chat, ride updates, driver location) powered by WebSockets (`Socket.io`).
-   - Rate limiting and CORS policies configured.
+### 1. 📱 SafeRide Mobile (Flutter)
+Application mobile haute performance pour iOS et Android.
+- **Stack**: Flutter, BLoC Pattern, Google Maps SDK, Supabase Flutter.
+- **Localisation**: "Canada Edition" avec devises en **$ CAD** et intégration des services d'urgence locaux.
+- **Fonctions Clés**: Suivi GPS temps réel, Chat intégré, intégration de paiements Stripe, et détection automatique d'anomalies.
 
-3. **`admin_web/` (Admin Dashboard)**
-   - Built with **React** and **Vite**.
-   - Styling driven by **Tailwind CSS**.
-   - Allows administrators to oversee active rides, manage users, and observe live platform metrics.
+### 2. 💻 Admin Web Dashboard (Next.js)
+Tableau de bord de gestion centralisé pour les administrateurs.
+- **Stack**: Next.js 16 (React 19), Tailwind CSS 4, Recharts, Lucide React.
+- **Fonctions Clés**: Monitoring des courses en direct, gestion des utilisateurs (KYC), supervision des revenus (Commissions SafeRide) et journal d'audit de sécurité.
 
-## Installation & Setup
+### 3. 🔥 Cloud Backend (Supabase)
+Infrastructure "Serverless" temps réel.
+- **Database**: PostgreSQL avec Row Level Security (RLS).
+- **Auth**: Authentification sécurisée par téléphone (OTP).
+- **Realtime**: Diffusion des positions des chauffeurs et chat via WebSockets.
+- **Storage**: Gestion des documents d'identité (KYC).
 
-### 1. Backend Server
-Ensure you have Node.js (v18+) and npm installed.
+---
 
-```bash
-cd backend
-npm install
-npx prisma generate
-npx prisma db push
-npm run start:dev
-```
-*Note: Make sure to copy `backend/.env.example` to `backend/.env` and update the environment variables (like your Stripe and Firebase keys).*
+## 🔒 Signature de Sécurité (SafeGate)
 
-### 2. Admin Web Dashboard
-Requires the backend server to be running.
+SafeRide se distingue par son protocole de sécurité multicouche unique :
 
-```bash
-cd admin_web
-npm install
-npm run dev
-```
+- **SafeGate Monitoring**: Surveillance automatique des trajets. Si un véhicule s'immobilise de manière suspecte pendant 5 minutes, une alerte est instantanément générée dans le tableau de bord admin.
+- **Family Shield**: Partage de lien de suivi en temps réel avec les proches.
+- **Emergency Hub**: Accès direct en un clic au **911** (Urgence), **811** (Santé/Info-Santé) et à l'assistance routière.
+- **Women Safe Mode**: Option permettant aux passagères de ne voyager qu'avec des chauffeuses vérifiées.
+- **OTP Verification**: Code unique de sécurité pour valider le début de chaque course.
 
-### 3. Mobile Application
-Ensure you have the Flutter SDK installed and an emulator running (or a physical device connected).
+---
 
-```bash
-flutter pub get
-flutter run
-```
-*Note: The mobile app requires your Google Maps API keys to be configured in `android/local.properties` (`MAPS_API_KEY`) and on iOS in `ios/Flutter/Secrets.xcconfig`.*
+## 🛠️ Installation et Lancement
 
-## Key Features
-- **Real-Time Location Tracking:** using WebSockets and Google Maps.
-- **Secure Authentication:** Passwords hashed with Bcrypt, access protected by JWT.
-- **In-App Messaging:** Private socket-driven chat between riders and drivers.
-- **Payments:** End-to-end payment flow integrated with Stripe's PaymentSheet API.
-- **Push Notifications:** Firebase Cloud Messaging (FCM) linked to actions.
-- **Security Protocols:** Features OTP verification for ride start, SOS alert buttons, and a Women Safety toggle mode.
+### Mobile (Flutter)
+1. Assurez-vous d'avoir le SDK Flutter installé.
+2. Clonez le dépôt et installez les dépendances :
+   ```bash
+   flutter pub get
+   ```
+3. Configurez vos clés API dans `lib/core/utils/app_constants.dart`.
+4. Lancez l'application :
+   ```bash
+   flutter run
+   ```
 
-## Architecture
+### Admin Web (Next.js)
+1. Naviguez dans le dossier `admin_web` :
+   ```bash
+   cd admin_web
+   ```
+2. Installez les dépendances :
+   ```bash
+   npm install
+   ```
+3. Configurez votre fichier `.env.local` avec vos identifiants Supabase.
+4. Lancez le serveur de développement :
+   ```bash
+   npm run dev
+   ```
 
-This project strictly adheres to modular and scalable architectures:
-- **NestJS** enforces strict Dependency Injection on the backend.
-- **Prisma** handles object-relational mapping safely.
-- **React** components in the web app are separated logically with strict responsive capabilities.
-- **Flutter** uses Clean Architecture principles splitting domains, models, and presentation layers.
+---
+
+## 📈 Suivi des Revenus
+Le système calcule automatiquement la **Commission SafeRide (20%)** sur chaque trajet, permettant une gestion transparente des revenus et des reversements chauffeurs directement depuis l'interface administrative.
+
+---
+
+## 📄 Licence
+Propriété de SafeRide Canada. Tous droits réservés.

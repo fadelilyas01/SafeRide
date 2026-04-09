@@ -45,6 +45,16 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>SafeRide a besoin de votre position pour vous localiser et assurer votre sécurité pendant vos trajets.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Nous suivons votre trajet en arrière-plan pour détecter toute anomalie et intervenir rapidement en cas d'urgence.</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tel</string>
+	</array>
+
 	<key>MAPS_API_KEY</key>
 	<string>$(MAPS_API_KEY)</string>
 </dict>
