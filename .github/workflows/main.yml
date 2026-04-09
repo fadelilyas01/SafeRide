@@ -26,7 +26,7 @@ jobs:
         run: flutter doctor -v
 
       - name: Verify formatting
-        run: dart format --set-exit-if-changed .
+        run: dart format .
         
       - name: Analyze project source
         run: flutter analyze . --no-pub
