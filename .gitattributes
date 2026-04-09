@@ -1,0 +1,5 @@
+# Force LF line endings for all Dart files to ensure CI consistency
+*.dart text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.json text eol=lf
