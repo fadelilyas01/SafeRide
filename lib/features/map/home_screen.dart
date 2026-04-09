@@ -302,7 +302,8 @@ class _HomeScreenState extends State<HomeScreen> {
     _inactivityPoints = 0;
 
     _anomalyTimer = Timer.periodic(const Duration(minutes: 1), (timer) async {
-      if (_currentRide == null || _currentRide!.status != RideStatus.inProgress) {
+      if (_currentRide == null ||
+          _currentRide!.status != RideStatus.inProgress) {
         return;
       }
 
