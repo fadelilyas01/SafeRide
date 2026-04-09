@@ -233,10 +233,11 @@ class _HomeScreenState extends State<HomeScreen> {
       _startSafeGateMonitoring();
     } catch (e) {
       setState(() => _isRequesting = false);
-      if (mounted)
+      if (mounted) {
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text('Erreur : $e')));
+      }
     }
   }
 
@@ -301,8 +302,9 @@ class _HomeScreenState extends State<HomeScreen> {
     _inactivityPoints = 0;
 
     _anomalyTimer = Timer.periodic(const Duration(minutes: 1), (timer) async {
-      if (_currentRide == null || _currentRide!.status != RideStatus.inProgress)
+      if (_currentRide == null || _currentRide!.status != RideStatus.inProgress) {
         return;
+      }
 
       final currentPos = await _locationService.getCurrentLocation();
       if (currentPos == null || _lastPosition == null) {
@@ -634,21 +636,25 @@ class _HomeScreenState extends State<HomeScreen> {
       });
       _listenToRideUpdates(ride.id!);
     } catch (e) {
-      if (mounted)
+      if (mounted) {
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text('Erreur : $e')));
+      }
     }
   }
 
   Widget _buildActiveRidePanel() {
     String statusText = "Recherche d'un chauffeur...";
-    if (_currentRide!.status == RideStatus.accepted)
+    if (_currentRide!.status == RideStatus.accepted) {
       statusText = "Chauffeur en route !";
-    if (_currentRide!.status == RideStatus.arrived)
+    }
+    if (_currentRide!.status == RideStatus.arrived) {
       statusText = "Le chauffeur est là !";
-    if (_currentRide!.status == RideStatus.inProgress)
+    }
+    if (_currentRide!.status == RideStatus.inProgress) {
       statusText = "Course en cours...";
+    }
 
     return Container(
       padding: const EdgeInsets.all(24),

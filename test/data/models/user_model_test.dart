@@ -1,10 +1,10 @@
+import 'package:flutter_test/flutter_test.dart';
 import 'package:saferide/core/models/user_model.dart';
-import 'package:saferide/core/utils/app_constants.dart';
 
 void main() {
   final tUserModel = UserModel(
     id: '1',
-    role: UserRole.RIDER,
+    role: UserRole.rider,
     firstName: 'Test',
     lastName: 'User',
     phone: '123456789',
@@ -16,7 +16,7 @@ void main() {
     test('should return a valid model when the JSON is correct', () {
       final Map<String, dynamic> jsonMap = {
         'id': '1',
-        'role': 'RIDER',
+        'role': 'rider',
         'first_name': 'Test',
         'last_name': 'User',
         'phone': '123456789',
@@ -38,7 +38,7 @@ void main() {
 
       final expectedMap = {
         'id': '1',
-        'role': 'RIDER',
+        'role': 'rider',
         'first_name': 'Test',
         'last_name': 'User',
         'phone': '123456789',
