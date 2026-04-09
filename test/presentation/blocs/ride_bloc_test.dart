@@ -12,6 +12,7 @@ import 'package:saferide/presentation/blocs/ride_bloc/ride_state.dart';
 
 // Mocktail Mock
 class MockRideRepository extends Mock implements RideRepository {}
+
 class FakeRideEntity extends Fake implements RideEntity {}
 
 void main() {
@@ -28,7 +29,7 @@ void main() {
     mockRideRepository = MockRideRepository();
     ridesStreamController = StreamController<List<RideEntity>>();
     activeRideStreamController = StreamController<RideEntity?>();
-    
+
     rideBloc = RideBloc(rideRepository: mockRideRepository);
   });
 
@@ -57,22 +58,21 @@ void main() {
   blocTest<RideBloc, RideState>(
     'emits [RideLoading, RideRequestSuccess] when RequestRideEvent is successful',
     build: () {
-      when(() => mockRideRepository.requestRide(any()))
-          .thenAnswer((_) async => Right(tRide));
+      when(
+        () => mockRideRepository.requestRide(any()),
+      ).thenAnswer((_) async => Right(tRide));
       return rideBloc;
     },
     act: (bloc) => bloc.add(RequestRideEvent(tRide)),
-    expect: () => [
-      RideLoading(),
-      RideRequestSuccess(tRide),
-    ],
+    expect: () => [RideLoading(), RideRequestSuccess(tRide)],
   );
 
   blocTest<RideBloc, RideState>(
     'emits [AvailableRidesLoaded] when rides are updated via stream',
     build: () {
-      when(() => mockRideRepository.getAvailableRides())
-          .thenAnswer((_) => ridesStreamController.stream);
+      when(
+        () => mockRideRepository.getAvailableRides(),
+      ).thenAnswer((_) => ridesStreamController.stream);
       return rideBloc;
     },
     act: (bloc) {
@@ -87,16 +87,15 @@ void main() {
   blocTest<RideBloc, RideState>(
     'emits [RideActive] when active ride is updated via stream',
     build: () {
-      when(() => mockRideRepository.getActiveRideStream(any()))
-          .thenAnswer((_) => activeRideStreamController.stream);
+      when(
+        () => mockRideRepository.getActiveRideStream(any()),
+      ).thenAnswer((_) => activeRideStreamController.stream);
       return rideBloc;
     },
     act: (bloc) {
       bloc.add(const WatchActiveRideEvent('1'));
       activeRideStreamController.add(tRide);
     },
-    expect: () => [
-      RideActive(tRide),
-    ],
+    expect: () => [RideActive(tRide)],
   );
 }

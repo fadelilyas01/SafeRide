@@ -1,8 +1,4 @@
-enum UserRole {
-  rider,
-  driver,
-  admin
-}
+enum UserRole { rider, driver, admin }
 
 class UserModel {
   final String id;
@@ -40,7 +36,9 @@ class UserModel {
       trustScore: (json['trust_score'] as num?)?.toDouble() ?? 5.0,
       isKycVerified: json['is_kyc_verified'] ?? false,
       isWomenSafe: json['is_women_safe'] ?? false,
-      createdAt: json['created_at'] != null ? DateTime.parse(json['created_at']) : null,
+      createdAt: json['created_at'] != null
+          ? DateTime.parse(json['created_at'])
+          : null,
     );
   }
 

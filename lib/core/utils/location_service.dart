@@ -19,12 +19,12 @@ class LocationService {
         return Future.error('La permission de localisation est refusée.');
       }
     }
-    
+
     if (permission == LocationPermission.deniedForever) {
       return Future.error(
         'Les permissions de localisation sont définitivement refusées, nous ne pouvons pas les demander.',
       );
-    } 
+    }
 
     return await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.bestForNavigation,

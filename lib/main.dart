@@ -16,7 +16,7 @@ import 'features/safety/emergency_hub.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
-  
+
   await Supabase.initialize(
     url: AppConstants.supabaseUrl,
     anonKey: AppConstants.supabaseAnonKey,
@@ -50,10 +50,7 @@ class SafeRideApp extends StatelessWidget {
             return OtpScreen(phone: phone);
           },
         ),
-        GoRoute(
-          path: '/home',
-          builder: (context, state) => const HomeScreen(),
-        ),
+        GoRoute(path: '/home', builder: (context, state) => const HomeScreen()),
         GoRoute(
           path: '/search',
           builder: (context, state) => const SearchDestinationScreen(),

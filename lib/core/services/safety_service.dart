@@ -14,7 +14,8 @@ class SafetyService {
       'actor_id': userId,
       'status': 'CRITICAL',
       'details': {
-        'message': 'L utilisateur a déclenché une alerte SOS pendant la course.',
+        'message':
+            'L utilisateur a déclenché une alerte SOS pendant la course.',
         'timestamp': DateTime.now().toIso8601String(),
       },
     });

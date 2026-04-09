@@ -1,11 +1,4 @@
-enum RideStatus {
-  pending,
-  accepted,
-  arrived,
-  inProgress,
-  completed,
-  cancelled
-}
+enum RideStatus { pending, accepted, arrived, inProgress, completed, cancelled }
 
 class RideModel {
   final String? id;
@@ -55,7 +48,9 @@ class RideModel {
       ),
       price: (json['price'] as num).toDouble(),
       otpCode: json['otp_code'],
-      createdAt: json['created_at'] != null ? DateTime.parse(json['created_at']) : null,
+      createdAt: json['created_at'] != null
+          ? DateTime.parse(json['created_at'])
+          : null,
     );
   }
 

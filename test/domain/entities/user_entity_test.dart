@@ -22,16 +22,23 @@ void main() {
     );
 
     test('should support equality', () {
-      expect(user, const UserEntity(
-        id: '1',
-        email: 'test@example.com',
-        role: UserRole.passenger,
-        paymentMethods: [paymentMethod],
-      ));
+      expect(
+        user,
+        const UserEntity(
+          id: '1',
+          email: 'test@example.com',
+          role: UserRole.passenger,
+          paymentMethods: [paymentMethod],
+        ),
+      );
     });
 
     test('should identify correctly as driver', () {
-      const driver = UserEntity(id: '2', email: 'd@e.com', role: UserRole.driver);
+      const driver = UserEntity(
+        id: '2',
+        email: 'd@e.com',
+        role: UserRole.driver,
+      );
       expect(driver.role, UserRole.driver);
     });
   });

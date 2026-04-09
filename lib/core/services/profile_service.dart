@@ -14,7 +14,7 @@ class ProfileService {
         .select()
         .eq('id', userId)
         .maybeSingle();
-    
+
     if (response == null) return null;
     return UserModel.fromJson(response);
   }
@@ -24,10 +24,7 @@ class ProfileService {
     final userId = _supabase.auth.currentUser?.id;
     if (userId == null) return;
 
-    await _supabase
-        .from('profiles')
-        .update(updates)
-        .eq('id', userId);
+    await _supabase.from('profiles').update(updates).eq('id', userId);
   }
 
   /// (Simulé) Upload de document KYC

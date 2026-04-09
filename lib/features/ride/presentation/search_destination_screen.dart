@@ -5,7 +5,8 @@ class SearchDestinationScreen extends StatefulWidget {
   const SearchDestinationScreen({super.key});
 
   @override
-  State<SearchDestinationScreen> createState() => _SearchDestinationScreenState();
+  State<SearchDestinationScreen> createState() =>
+      _SearchDestinationScreenState();
 }
 
 class _SearchDestinationScreenState extends State<SearchDestinationScreen> {
@@ -35,7 +36,10 @@ class _SearchDestinationScreenState extends State<SearchDestinationScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF0F172A),
       appBar: AppBar(
-        title: const Text('Où allez-vous ?', style: TextStyle(color: Colors.white)),
+        title: const Text(
+          'Où allez-vous ?',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),
@@ -54,7 +58,10 @@ class _SearchDestinationScreenState extends State<SearchDestinationScreen> {
                   hintStyle: const TextStyle(color: Colors.grey),
                   filled: true,
                   fillColor: const Color(0xFF1E293B),
-                  prefixIcon: const Icon(Icons.search, color: Colors.blueAccent),
+                  prefixIcon: const Icon(
+                    Icons.search,
+                    color: Colors.blueAccent,
+                  ),
                   suffixIcon: IconButton(
                     icon: const Icon(Icons.clear, color: Colors.grey),
                     onPressed: () {

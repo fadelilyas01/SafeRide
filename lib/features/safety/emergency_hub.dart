@@ -6,10 +6,7 @@ class EmergencyHub extends StatelessWidget {
   const EmergencyHub({super.key});
 
   Future<void> _makeCall(String number) async {
-    final Uri launchUri = Uri(
-      scheme: 'tel',
-      path: number,
-    );
+    final Uri launchUri = Uri(scheme: 'tel', path: number);
     if (await canLaunchUrl(launchUri)) {
       await launchUrl(launchUri);
     }
@@ -22,7 +19,10 @@ class EmergencyHub extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Text("Centre de Sécurité Canada", style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text(
+          "Centre de Sécurité Canada",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, size: 20),
           onPressed: () => Navigator.pop(context),
@@ -39,15 +39,25 @@ class EmergencyHub extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.redAccent.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: Colors.redAccent.withValues(alpha: 0.3)),
+                border: Border.all(
+                  color: Colors.redAccent.withValues(alpha: 0.3),
+                ),
               ),
               child: Column(
                 children: [
-                  const Icon(LucideIcons.shieldAlert, color: Colors.redAccent, size: 48),
+                  const Icon(
+                    LucideIcons.shieldAlert,
+                    color: Colors.redAccent,
+                    size: 48,
+                  ),
                   const SizedBox(height: 16),
                   const Text(
                     "Besoin d'aide immédiate ?",
-                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
@@ -63,12 +73,18 @@ class EmergencyHub extends StatelessWidget {
                       onPressed: () => _makeCall("911"),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.redAccent,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
                       ),
                       icon: const Icon(Icons.phone, color: Colors.white),
                       label: const Text(
                         "APPELER LE 911",
-                        style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -77,7 +93,14 @@ class EmergencyHub extends StatelessWidget {
             ),
 
             const SizedBox(height: 32),
-            const Text("Services de Santé & Info", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              "Services de Santé & Info",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const SizedBox(height: 16),
 
             _buildServiceTile(
@@ -87,7 +110,7 @@ class EmergencyHub extends StatelessWidget {
               number: "811",
               color: Colors.blueAccent,
             ),
-            
+
             _buildServiceTile(
               icon: LucideIcons.car,
               title: "Assistance Routière",
@@ -97,9 +120,16 @@ class EmergencyHub extends StatelessWidget {
             ),
 
             const SizedBox(height: 32),
-            const Text("Vos Contacts de Confiance", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              "Vos Contacts de Confiance",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const SizedBox(height: 16),
-            
+
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -108,9 +138,15 @@ class EmergencyHub extends StatelessWidget {
               ),
               child: const Row(
                 children: [
-                  CircleAvatar(backgroundColor: Colors.blueAccent, child: Icon(Icons.add, color: Colors.white)),
+                  CircleAvatar(
+                    backgroundColor: Colors.blueAccent,
+                    child: Icon(Icons.add, color: Colors.white),
+                  ),
                   SizedBox(width: 16),
-                  Text("Ajouter un contact d'urgence", style: TextStyle(color: Colors.white70)),
+                  Text(
+                    "Ajouter un contact d'urgence",
+                    style: TextStyle(color: Colors.white70),
+                  ),
                 ],
               ),
             ),
@@ -138,7 +174,10 @@ class EmergencyHub extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12),
+            ),
             child: Icon(icon, color: color, size: 24),
           ),
           const SizedBox(width: 16),
@@ -146,8 +185,17 @@ class EmergencyHub extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                Text(subtitle, style: const TextStyle(color: Colors.grey, fontSize: 12)),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  subtitle,
+                  style: const TextStyle(color: Colors.grey, fontSize: 12),
+                ),
               ],
             ),
           ),

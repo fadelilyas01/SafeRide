@@ -17,7 +17,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   void _verifyOtp() async {
     setState(() => _isLoading = true);
-    
+
     try {
       final res = await Supabase.instance.client.auth.verifyOTP(
         type: OtpType.sms,
@@ -32,9 +32,9 @@ class _OtpScreenState extends State<OtpScreen> {
       }
     } on AuthException catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erreur: ${e.message}')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Erreur: ${e.message}')));
       }
     } catch (e) {
       if (mounted) {
@@ -76,10 +76,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 const SizedBox(height: 8),
                 Text(
                   'Un code à 6 chiffres a été envoyé au ${widget.phone}',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
-                  ),
+                  style: const TextStyle(fontSize: 16, color: Colors.grey),
                 ),
                 const SizedBox(height: 32),
                 TextField(
@@ -87,7 +84,11 @@ class _OtpScreenState extends State<OtpScreen> {
                   keyboardType: TextInputType.number,
                   maxLength: 6,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.white, fontSize: 24, letterSpacing: 8),
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    letterSpacing: 8,
+                  ),
                   decoration: InputDecoration(
                     counterText: "",
                     filled: true,
@@ -114,7 +115,11 @@ class _OtpScreenState extends State<OtpScreen> {
                         ? const CircularProgressIndicator(color: Colors.white)
                         : const Text(
                             'Vérifier',
-                            style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                   ),
                 ),

@@ -13,8 +13,8 @@ class OnboardingScreen extends StatelessWidget {
         child: Responsive.bounded(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: Responsive.isTablet(context) ? 48.0 : 24.0, 
-              vertical: 48.0
+              horizontal: Responsive.isTablet(context) ? 48.0 : 24.0,
+              vertical: 48.0,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,7 +34,7 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 48),
-                
+
                 // Textes d'accueil
                 const Text(
                   'Bienvenue sur SafeRide',
@@ -55,9 +55,9 @@ class OnboardingScreen extends StatelessWidget {
                     height: 1.5,
                   ),
                 ),
-                
+
                 const Spacer(),
-                
+
                 // Boutons d'Action
                 SizedBox(
                   width: double.infinity,
@@ -73,8 +73,8 @@ class OnboardingScreen extends StatelessWidget {
                     child: const Text(
                       'Se Connecter',
                       style: TextStyle(
-                        fontSize: 18, 
-                        color: Colors.white, 
+                        fontSize: 18,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -87,7 +87,10 @@ class OnboardingScreen extends StatelessWidget {
                   child: OutlinedButton(
                     onPressed: () => context.push('/login'),
                     style: OutlinedButton.styleFrom(
-                      side: const BorderSide(color: Colors.blueAccent, width: 2),
+                      side: const BorderSide(
+                        color: Colors.blueAccent,
+                        width: 2,
+                      ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -95,8 +98,8 @@ class OnboardingScreen extends StatelessWidget {
                     child: const Text(
                       'Créer un Compte',
                       style: TextStyle(
-                        fontSize: 18, 
-                        color: Colors.blueAccent, 
+                        fontSize: 18,
+                        color: Colors.blueAccent,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -110,4 +113,3 @@ class OnboardingScreen extends StatelessWidget {
     );
   }
 }
-

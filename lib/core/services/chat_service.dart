@@ -15,9 +15,7 @@ class ChatService {
       message: message,
     );
 
-    await _supabase
-        .from('chat_messages')
-        .insert(chatMessage.toMap());
+    await _supabase.from('chat_messages').insert(chatMessage.toMap());
   }
 
   /// Stream les messages d'une course en temps réel
@@ -27,6 +25,9 @@ class ChatService {
         .stream(primaryKey: ['id'])
         .eq('ride_id', rideId)
         .order('created_at')
-        .map((list) => list.map((json) => ChatMessageModel.fromJson(json)).toList());
+        .map(
+          (list) =>
+              list.map((json) => ChatMessageModel.fromJson(json)).toList(),
+        );
   }
 }

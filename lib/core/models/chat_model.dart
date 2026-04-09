@@ -19,7 +19,9 @@ class ChatMessageModel {
       rideId: json['ride_id'],
       senderId: json['sender_id'],
       message: json['message'],
-      createdAt: json['created_at'] != null ? DateTime.parse(json['created_at']) : null,
+      createdAt: json['created_at'] != null
+          ? DateTime.parse(json['created_at'])
+          : null,
     );
   }
 

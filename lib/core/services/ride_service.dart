@@ -11,7 +11,7 @@ class RideService {
         .insert(ride.toMap())
         .select()
         .single();
-    
+
     return RideModel.fromJson(response);
   }
 
@@ -22,7 +22,7 @@ class RideService {
         .select()
         .eq('id', id)
         .maybeSingle();
-    
+
     if (response == null) return null;
     return RideModel.fromJson(response);
   }
@@ -50,7 +50,7 @@ class RideService {
         .from('rides')
         .select()
         .eq('status', RideStatus.pending.name);
-    
+
     return (response as List).map((json) => RideModel.fromJson(json)).toList();
   }
 }

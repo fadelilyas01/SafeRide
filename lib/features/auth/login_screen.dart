@@ -19,19 +19,17 @@ class _LoginScreenState extends State<LoginScreen> {
     if (phone.isEmpty) return;
 
     setState(() => _isLoading = true);
-    
+
     try {
-      await Supabase.instance.client.auth.signInWithOtp(
-        phone: phone,
-      );
+      await Supabase.instance.client.auth.signInWithOtp(phone: phone);
       if (mounted) {
         context.push('/otp', extra: phone);
       }
     } on AuthException catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erreur: ${e.message}')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Erreur: ${e.message}')));
       }
     } catch (e) {
       if (mounted) {
@@ -49,20 +47,20 @@ class _LoginScreenState extends State<LoginScreen> {
   void _signInWithApple() async {
     setState(() => _isLoading = true);
     try {
-      await Supabase.instance.client.auth.signInWithOAuth(
-        OAuthProvider.apple,
-      );
+      await Supabase.instance.client.auth.signInWithOAuth(OAuthProvider.apple);
       // GoRouter automatically detects session changes in main.dart
     } on AuthException catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erreur Apple: ${e.message}')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Erreur Apple: ${e.message}')));
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Impossible de se connecter avec Apple.')),
+          const SnackBar(
+            content: Text('Impossible de se connecter avec Apple.'),
+          ),
         );
       }
     } finally {
@@ -97,10 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 8),
                 const Text(
                   'Entrez votre numéro de téléphone pour vous connecter ou créer un compte.',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
-                  ),
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
                 ),
                 const SizedBox(height: 32),
                 TextField(
@@ -116,7 +111,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
                     ),
-                    prefixIcon: const Icon(Icons.phone, color: Colors.blueAccent),
+                    prefixIcon: const Icon(
+                      Icons.phone,
+                      color: Colors.blueAccent,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 24),
@@ -135,7 +133,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         ? const CircularProgressIndicator(color: Colors.white)
                         : const Text(
                             'Continuer',
-                            style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                   ),
                 ),
@@ -143,7 +145,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Center(
                   child: Text(
                     'OU',
-                    style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -152,10 +157,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 56,
                   child: OutlinedButton.icon(
                     onPressed: _isLoading ? null : _signInWithApple,
-                    icon: const Icon(Icons.apple, color: Colors.white, size: 28),
+                    icon: const Icon(
+                      Icons.apple,
+                      color: Colors.white,
+                      size: 28,
+                    ),
                     label: const Text(
                       'Continuer avec Apple',
-                      style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     style: OutlinedButton.styleFrom(
                       side: const BorderSide(color: Colors.white24),

@@ -25,7 +25,9 @@ class _ChatScreenState extends State<ChatScreen> {
       await _chatService.sendMessage(widget.rideId, text);
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Erreur d upload : $e')));
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Erreur d upload : $e')));
       }
     }
   }
@@ -49,10 +51,15 @@ class _ChatScreenState extends State<ChatScreen> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(child: CircularProgressIndicator());
                 }
-                
+
                 final messages = snapshot.data ?? [];
                 if (messages.isEmpty) {
-                  return const Center(child: Text('Aucun message. Dites bonjour !', style: TextStyle(color: Colors.grey)));
+                  return const Center(
+                    child: Text(
+                      'Aucun message. Dites bonjour !',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  );
                 }
 
                 return ListView.builder(
@@ -64,15 +71,26 @@ class _ChatScreenState extends State<ChatScreen> {
                     final isMe = msg.senderId == _currentUserId;
 
                     return Align(
-                      alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
+                      alignment: isMe
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
                       child: Container(
                         margin: const EdgeInsets.only(bottom: 8),
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 10,
+                        ),
                         decoration: BoxDecoration(
-                          color: isMe ? Colors.blueAccent : const Color(0xFF1E293B),
+                          color: isMe
+                              ? Colors.blueAccent
+                              : const Color(0xFF1E293B),
                           borderRadius: BorderRadius.circular(16).copyWith(
-                            bottomRight: isMe ? const Radius.circular(0) : const Radius.circular(16),
-                            bottomLeft: isMe ? const Radius.circular(16) : const Radius.circular(0),
+                            bottomRight: isMe
+                                ? const Radius.circular(0)
+                                : const Radius.circular(16),
+                            bottomLeft: isMe
+                                ? const Radius.circular(16)
+                                : const Radius.circular(0),
                           ),
                         ),
                         child: Text(
@@ -86,7 +104,7 @@ class _ChatScreenState extends State<ChatScreen> {
               },
             ),
           ),
-          
+
           // Entrée de message
           Container(
             padding: const EdgeInsets.all(16),

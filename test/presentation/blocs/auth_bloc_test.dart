@@ -21,9 +21,11 @@ void main() {
   setUp(() {
     mockAuthRepository = MockAuthRepository();
     userStreamController = StreamController<UserEntity?>();
-    
-    when(() => mockAuthRepository.userStream).thenAnswer((_) => userStreamController.stream);
-    
+
+    when(
+      () => mockAuthRepository.userStream,
+    ).thenAnswer((_) => userStreamController.stream);
+
     authBloc = AuthBloc(authRepository: mockAuthRepository);
   });
 
@@ -46,33 +48,29 @@ void main() {
     'emits [Authenticated] when a user is emitted on the stream',
     build: () => authBloc,
     act: (_) => userStreamController.add(tUser),
-    expect: () => [
-      const Authenticated(tUser),
-    ],
+    expect: () => [const Authenticated(tUser)],
   );
 
   blocTest<AuthBloc, AuthState>(
     'emits [Unauthenticated] when null is emitted on the stream',
     build: () => authBloc,
     act: (_) => userStreamController.add(null),
-    expect: () => [
-      Unauthenticated(),
-    ],
+    expect: () => [Unauthenticated()],
   );
 
   blocTest<AuthBloc, AuthState>(
     'emits [AuthLoading, Authenticated] when SignInRequested is successful',
     build: () {
-      when(() => mockAuthRepository.signInWithEmail(
-        email: any(named: 'email'),
-        password: any(named: 'password'),
-      )).thenAnswer((_) async => const Right(tUser));
+      when(
+        () => mockAuthRepository.signInWithEmail(
+          email: any(named: 'email'),
+          password: any(named: 'password'),
+        ),
+      ).thenAnswer((_) async => const Right(tUser));
       return authBloc;
     },
-    act: (bloc) => bloc.add(const SignInRequested('test@example.com', 'password')),
-    expect: () => [
-      AuthLoading(),
-      const Authenticated(tUser),
-    ],
+    act: (bloc) =>
+        bloc.add(const SignInRequested('test@example.com', 'password')),
+    expect: () => [AuthLoading(), const Authenticated(tUser)],
   );
 }
