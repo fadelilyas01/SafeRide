@@ -1,0 +1,109 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            String        @id @default(uuid())
+  email         String        @unique
+  name          String?
+  passwordHash  String?
+  role          String        @default("USER")
+  createdAt     DateTime      @default(now())
+
+  ridesAsDriver Ride[]        @relation("DriverRides")
+  reservations  Reservation[] @relation("PassengerReservations")
+  tripsAsUser   Trip[]        @relation("UserTrips")
+  tripsAsDriver Trip[]        @relation("DriverTrips")
+}
+
+model Ride {
+  id               String        @id @default(uuid())
+  driverId         String
+  originLabel      String        @default("Paris - Gare de Lyon")
+  destinationLabel String        @default("Campus de Versailles")
+  startLat         Float
+  startLng         Float
+  endLat           Float
+  endLng           Float
+  departureTime    DateTime
+  routeGeometry    String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  driver           User          @relation("DriverRides", fields: [driverId], references: [id])
+  reservations     Reservation[]
+}
+
+model Reservation {
+  id               String   @id @default(uuid())
+  rideId           String
+  passengerId      String
+  status           String   @default("PENDING")
+  verificationCode String
+  startLat         Float
+  startLng         Float
+  endLat           Float
+  endLng           Float
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  ride             Ride     @relation(fields: [rideId], references: [id], onDelete: Cascade)
+  passenger        User     @relation("PassengerReservations", fields: [passengerId], references: [id])
+  trip             Trip?
+}
+
+model Trip {
+  id               String           @id @default(uuid())
+  userId           String
+  driverId         String?
+  reservationId    String?          @unique
+  status           String           @default("PLANNED")
+  originLabel      String           @default("Paris - Gare de Lyon")
+  destinationLabel String           @default("Campus de Versailles")
+  startLat         Float
+  startLng         Float
+  endLat           Float
+  endLng           Float
+  routeGeometry    String?
+  startTime        DateTime         @default(now())
+  endTimeEst       DateTime
+  completedAt      DateTime?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  user             User             @relation("UserTrips", fields: [userId], references: [id])
+  driver           User?            @relation("DriverTrips", fields: [driverId], references: [id])
+  reservation      Reservation?     @relation(fields: [reservationId], references: [id])
+  pings            LocationPing[]
+  emergencyAlerts  EmergencyAlert[]
+}
+
+model LocationPing {
+  id        String   @id @default(uuid())
+  tripId    String
+  latitude  Float
+  longitude Float
+  speed     Float?
+  heading   Float?
+  timestamp DateTime @default(now())
+
+  trip      Trip     @relation(fields: [tripId], references: [id], onDelete: Cascade)
+
+  @@index([tripId, timestamp])
+}
+
+model EmergencyAlert {
+  id          String    @id @default(uuid())
+  tripId      String
+  userId      String
+  status      String    @default("ACTIVE")
+  triggeredAt DateTime  @default(now())
+  resolvedAt  DateTime?
+
+  trip        Trip      @relation(fields: [tripId], references: [id], onDelete: Cascade)
+}

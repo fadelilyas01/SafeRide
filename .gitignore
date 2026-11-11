@@ -1,57 +1,53 @@
-# Miscellaneous
-*.class
+# Node & Next.js Backend
+node_modules/
+backend/node_modules/
+.next/
+backend/.next/
+out/
+backend/out/
 *.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
+# Database & SQLite
+*.db
+*.db-journal
+backend/prisma/*.db
+backend/prisma/*.db-journal
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# Environment & Secrets (Zero Secret Leak Policy)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+backend/.env.local
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# Flutter & Dart
 .dart_tool/
+mobile/.dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
 .pub-cache/
 .pub/
-/build/
-/coverage/
+build/
+mobile/build/
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/app/debug/
+mobile/android/app/profile/
+mobile/android/app/release/
+*.apk
+*.aab
 
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-
-# API Keys / Secrets
-ios/Flutter/Secrets.xcconfig
-android/local.properties
-.env
-.env.*
-
-# Backend / Admin secrets
-admin_web/.env.local
-backend/.env
-backend/dist/
-backend/node_modules/
+# IDE & OS
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/
